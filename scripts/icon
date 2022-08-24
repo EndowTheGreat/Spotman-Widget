@@ -1,0 +1,6 @@
+if [ $(spotman metadata --attribute status) == "Playing" ]
+then
+    echo ""
+else
+    echo ""
+fi

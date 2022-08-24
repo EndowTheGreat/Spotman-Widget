@@ -1,0 +1,42 @@
+(defpoll image 	:interval "500ms" `spotman metadata --attribute image`)
+(defpoll title 	:interval "500ms" `spotman metadata --attribute title`)
+(defpoll artist :interval "500ms" `spotman metadata --attribute artist`)
+(defpoll icon :interval "50ms" `~/.config/eww/scripts/icon`)
+
+(defwidget player []
+  (box 	:class "player"
+    :orientation "v"
+    :space-evenly "false"
+    :halign "center"
+    (box 	:class "image"
+      :style "background-image: url('${image}');")
+    (box 	:orientation "v"
+      :space-evenly "false"
+      :halign "center"
+      :spacing 10
+      (label  :class "title"
+        :limit-width 25
+      :text title)
+      (label  :class "artist"
+        :limit-width 20
+      :text artist)
+      (box 	:orientation "h"
+        :space-evenly "false"
+        :halign "center"
+        :spacing 35
+        (button :onclick "spotman previous" "ﭣ")
+        (button :onclick "spotman playpause" icon)
+        (button :onclick "spotman next" "ﭡ"))
+    )
+  )
+)
+
+(defwindow spotman
+  :monitor 0
+  :geometry (geometry
+    :x "-150"
+    :y "-100"
+  :anchor "right center")
+  :windowtype "normal"
+  :wm-ignore true
+  (player))

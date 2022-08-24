@@ -1,0 +1,43 @@
+$background: #1d2021;
+$foreground: #ebdbb2;
+$aqua: #8ec07c;
+
+* {
+  all: unset;
+}
+
+.player {
+  background-color: $background;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 0.5rem;
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin: 2rem;
+  padding: 7rem;
+}
+
+.title {
+  color: $foreground;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.artist {
+  color: $foreground;
+  font-size: 1.1em;
+  margin-top: -5px;
+}
+
+button {
+  color: $foreground;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 2.8em;
+  &:hover {
+    color: $aqua;
+  }
+}
